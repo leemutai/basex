@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="searchScreenVM" type="com.leemutaisapplication.app.modules.searchscreen.data.viewmodel.SearchScreenVM"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearSearchScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylewhite_A700">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_37pxh"
+            android:layout_marginStart="@dimen/_37pxh"
+            android:layout_marginTop="@dimen/_37pxv"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearToptitle"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageArrowleft"
+                    android:layout_height="@dimen/_18pxh"
+                    android:layout_marginBottom="@dimen/_3pxv"
+                    android:layout_marginTop="@dimen/_4pxv"
+                    android:layout_width="@dimen/_18pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowleft"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSearch"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_94pxh"
+                    android:layout_weight="0.81"
+                    android:layout_width="0dp"
+                    android:letterSpacing="0.02"
+                    android:singleLine="true"
+                    android:text="@{searchScreenVM.searchScreenModel.txtSearch}"
+                    style="@style/txtMontserratmedium21" tools:text="@string/lbl_search"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <EditText
+            android:background="@drawable/rectangle_bg_gray_50_border_bluegray_50_radius_10"
+            android:drawableEnd="@drawable/img_rewind"
+            android:drawablePadding="@dimen/_30pxh"
+            android:ellipsize="end"
+            android:hint="@string/msg_1bhk_house_near"
+            android:id="@+id/etSearchbar" android:inputType="text"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_13pxh"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_38pxv"
+            android:layout_width="match_parent"
+            android:letterSpacing="0.01"
+            android:paddingBottom="@dimen/_17pxv"
+            android:paddingEnd="@dimen/_21pxh"
+            android:paddingStart="@dimen/_21pxh"
+            android:paddingTop="@dimen/_16pxv" android:singleLine="true"
+            android:text="@={searchScreenVM.searchScreenModel.etSearchbarValue}"
+            android:textColorHint="@color/indigo_100"
+            style="@style/etSolidRoundedOutline" tools:ignore="Autofill"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnlabel"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_marginTop="@dimen/_31pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearRowlabel"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtLabel"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2pxv"
+                    android:layout_weight="0.64"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="@dimen/_3pxh"
+                    android:singleLine="true"
+                    android:text="@{searchScreenVM.searchScreenModel.txtLabel}"
+                    style="@style/txtRobotoblack17" tools:text="@string/lbl_top_results"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtLabelOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_6pxv"
+                    android:layout_marginStart="@dimen/_175pxh"
+                    android:layout_weight="0.36"
+                    android:layout_width="0dp"
+                    android:lineSpacingExtra="@dimen/_3pxh"
+                    android:singleLine="true"
+                    android:text="@{searchScreenVM.searchScreenModel.txtLabelOne}"
+                    style="@style/txtRobotolight13" tools:text="@string/lbl_show_all"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerListfavorite"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_18pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_15pxh}" tools:itemCount="3" tools:listitem="@layout/row_listfavorite"/>
+        </LinearLayout>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtRecommendation"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_34pxh"
+            android:layout_marginStart="@dimen/_34pxh"
+            android:layout_marginTop="@dimen/_38pxv"
+            android:layout_width="wrap_content"
+            android:letterSpacing="0.01" android:singleLine="true"
+            android:text="@{searchScreenVM.searchScreenModel.txtRecommendation}"
+            style="@style/txtMontserratsemibold13_1" tools:text="@string/lbl_recommendation"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerListlinkedin"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_80pxv"
+            android:layout_marginEnd="@dimen/_33pxh"
+            android:layout_marginStart="@dimen/_33pxh"
+            android:layout_marginTop="@dimen/_18pxv"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            itemSpace="@{@dimen/_19pxh}" tools:itemCount="2" tools:listitem="@layout/row_listlinkedin"/>
+    </LinearLayout>
+</layout>

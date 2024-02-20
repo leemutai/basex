@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="listfavoriteRowModel" type="com.leemutaisapplication.app.modules.searchscreen.data.model.ListfavoriteRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearCard"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical" style="@style/groupStylewhite_A700cornerRadius">
+        <FrameLayout android:id="@+id/frameStackfavorite"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_136pxv" android:layout_width="@dimen/_150pxh">
+            <ImageView android:id="@+id/imageImage"
+                android:layout_gravity="start"
+                android:layout_height="@dimen/_136pxh"
+                android:layout_width="@dimen/_150pxh"
+                android:scaleType="fitXY"
+                cornerRadius="@{@dimen/_10pxh}"
+                imageRes="@{@drawable/img_image}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_image"/>
+            <ImageButton
+                android:background="@drawable/rectangle_bg_white_a700_radius_10_2"
+                android:id="@+id/btnFavorite"
+                android:layout_gravity="top|end"
+                android:layout_height="@dimen/_20pxh"
+                android:layout_marginBottom="@dimen/_15pxv"
+                android:layout_marginEnd="@dimen/_16pxh"
+                android:layout_marginStart="@dimen/_16pxh"
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_width="@dimen/_20pxh"
+                android:paddingHorizontal="@dimen/_4pxh"
+                android:paddingVertical="@dimen/_4pxv"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_favorite" tools:ignore="ContentDescription"/>
+        </FrameLayout>
+        <TextView android:gravity="start" android:id="@+id/txtCountry"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_21pxv"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_5pxh"
+            android:text="@{listfavoriteRowModel.txtCountry}"
+            style="@style/txtRobotoregular13" tools:text="@string/msg_abcsd_apartment"/>
+        <ImageView android:id="@+id/imageRate"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_11pxh"
+            android:layout_marginBottom="@dimen/_29pxv"
+            android:layout_marginEnd="@dimen/_15pxh"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_38pxv"
+            android:layout_width="@dimen/_84pxh"
+            android:scaleType="fitXY" android:src="@drawable/img_rate"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_rate"/>
+    </LinearLayout>
+</layout>

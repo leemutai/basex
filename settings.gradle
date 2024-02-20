@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "lee_mutai_s_application"

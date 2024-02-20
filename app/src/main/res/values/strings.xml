@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">lee_mutai_s_application</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+<string name="lbl_search">Search</string>
+  <string name="msg_1bhk_house_near">1BHK House near me</string>
+  <string name="lbl_show_all">Show all</string>
+  <string name="lbl_recommendation">Recommendation</string>
+  <string name="lbl_house_name">House Name</string>
+  <string name="lbl_top_results">Top results</string>
+  <string name="msg_abcsd_apartment">abcsd apartment near mumbia, india</string>
+  <string name="lbl_4_5_out_of_5">4.5 OUT OF 5</string>
+  <string name="lbl_mumbai">Mumbai</string>
+</resources>
